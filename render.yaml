@@ -1,19 +1,13 @@
-# render.yaml - Place this in your project root
+# render.yaml - Minimal working version
 services:
-  # Backend API Service
   - type: web
     name: financial-friend-api
     runtime: python
-    buildCommand: "cd backend && pip install -r requirements.txt"
-    startCommand: "cd backend && python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
-    healthCheckPath: /health
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
-
-  # Frontend Static Site  
-  - type: web
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    
+  - type: web  
     name: financial-friend-frontend
     runtime: static
-    buildCommand: "cd frontend && npm ci && npm run build"
+    buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
