@@ -15,6 +15,7 @@ app.add_middleware(
         "http://localhost:5173",  # Vite dev server
         "http://localhost:3000",  # CRA dev server (if you ever use it)
         "https://financial-friend-web-app.onrender.com",  # Your Render frontend URL
+        "https://financial-friend-web-app.vercel.app/",
     ],
     allow_credentials=True,
     allow_methods=["*"],
