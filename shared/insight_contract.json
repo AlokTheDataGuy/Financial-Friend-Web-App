@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "text": "You spent ₹32,400 in 90 days — about ₹360/day.",
+    "total_amount": 32400,
+    "period_days": 90,
+    "daily_average": 360
+  },
+  "highlights": [
+    {
+      "id": "top_category",
+      "title": "Food & Dining Rules Your Wallet",
+      "description": "₹12,800 went to restaurants and food delivery — that's 40% of all spending",
+      "amount": 12800,
+      "percentage": 40,
+      "icon": "🍕"
+    },
+    {
+      "id": "weekend_pattern",
+      "title": "Weekend Warrior Spending",
+      "description": "You spend 60% more on weekends (₹480/day vs ₹300/day weekdays)",
+      "weekend_avg": 480,
+      "weekday_avg": 300,
+      "icon": "📅"
+    },
+    {
+      "id": "night_owl",
+      "title": "Late Night Money Leaks",
+      "description": "₹8,200 spent between 10 PM - 2 AM, mostly on food delivery",
+      "amount": 8200,
+      "time_range": "10 PM - 2 AM",
+      "icon": "🌙"
+    },
+    {
+      "id": "subscriptions",
+      "title": "Silent Subscription Drain",
+      "description": "₹1,850/month in recurring charges (Netflix, Spotify, gym)",
+      "monthly_amount": 1850,
+      "services_count": 7,
+      "icon": "💳"
+    }
+  ],
+  "charts": [
+    {
+      "type": "pie",
+      "title": "Where Your Money Went",
+      "data": [
+        {"label": "Food & Dining", "value": 12800, "color": "#FF6B6B"},
+        {"label": "Shopping", "value": 8900, "color": "#4ECDC4"},
+        {"label": "Transport", "value": 5200, "color": "#45B7D1"},
+        {"label": "Entertainment", "value": 3400, "color": "#96CEB4"},
+        {"label": "Others", "value": 2100, "color": "#FFEAA7"}
+      ]
+    },
+    {
+      "type": "bar",
+      "title": "Daily Spending Pattern",
+      "data": [
+        {"label": "Mon", "value": 280},
+        {"label": "Tue", "value": 310},
+        {"label": "Wed", "value": 290},
+        {"label": "Thu", "value": 320},
+        {"label": "Fri", "value": 450},
+        {"label": "Sat", "value": 520},
+        {"label": "Sun", "value": 480}
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "cut_night_snacks",
+      "title": "Cut Late-Night Food Orders",
+      "description": "Reducing midnight snacks by 50% saves ₹4,100/year",
+      "current_monthly": 680,
+      "potential_saving_yearly": 4100,
+      "difficulty": "easy",
+      "impact": "medium"
+    },
+    {
+      "id": "weekend_budgeting",
+      "title": "Set Weekend Spending Limit",
+      "description": "Capping weekend spending at ₹400/day saves ₹8,300/year",
+      "potential_saving_yearly": 8300,
+      "difficulty": "medium",
+      "impact": "high"
+    },
+    {
+      "id": "subscription_audit",
+      "title": "Cancel Unused Subscriptions",
+      "description": "Review and cancel 2-3 unused services to save ₹6,000/year",
+      "potential_saving_yearly": 6000,
+      "difficulty": "easy",
+      "impact": "medium"
+    }
+  ],
+  "metadata": {
+    "processed_at": "2025-01-15T10:30:00Z",
+    "transaction_count": 487,
+    "date_range": {
+      "start": "2024-10-15",
+      "end": "2025-01-15"
+    },
+    "data_source": "phonepe_csv"
+  }
+}
