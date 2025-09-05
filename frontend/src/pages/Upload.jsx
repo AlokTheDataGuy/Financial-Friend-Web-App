@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { API_BASE_URL } from './config.js';
+import { API_BASE_URL } from '../config.js';
 
 // Use API_BASE_URL instead of hardcoded localhost
 export default function UploadPage() {

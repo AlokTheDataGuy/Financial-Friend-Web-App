@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { API_BASE_URL } from './config.js';
+import { API_BASE_URL } from '../config.js';
 
 export default function FileUpload({ onAnalyze }) {
             const [selectedFile, setSelectedFile] = useState(null);
