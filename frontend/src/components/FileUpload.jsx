@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { API_BASE_URL } from './config.js';
 
 export default function FileUpload({ onAnalyze }) {
             const [selectedFile, setSelectedFile] = useState(null);
@@ -17,7 +18,7 @@ export default function FileUpload({ onAnalyze }) {
                     const formData = new FormData();
                     formData.append('file', selectedFile);
 
-                    const response = await fetch('http://localhost:8000/analyze-statement', {
+                    const response = await fetch(`${API_BASE_URL}/analyze-statement`, {
                         method: 'POST',
                         body: formData,
                     });

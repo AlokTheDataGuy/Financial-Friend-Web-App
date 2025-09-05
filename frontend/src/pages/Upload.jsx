@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { API_BASE_URL } from './config.js';
 
+// Use API_BASE_URL instead of hardcoded localhost
 export default function UploadPage() {
   const [file, setFile] = useState(null);
 
   const handleUpload = async () => {
     const formData = new FormData();
     formData.append("file", file);
-    const res = await fetch("http://localhost:8000/analyze", {
+    const res = await fetch(`${API_BASE_URL}/analyze`, {
       method: "POST",
       body: formData,
     });
