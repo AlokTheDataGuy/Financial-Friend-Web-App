@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     allowedHosts: [
-      'financial-friend-web-app.onrender.com'
+      'financial-friend-web-app.onrender.com',
+      'financial-friend-web-app.vercel.app'
     ]
   }
 })
