@@ -1,83 +1,60 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
 import FileUpload from './components/FileUpload';
-// import EnhancedReport from './components/EnhancedReport';
-
 import Report from './components/Report';
-import ClarificationModal from './components/ClarificationModal';
+import PhonePeGuide from "./pages/PhonePeGuide";
 
-export default function App() {
+function App() {
   const [insights, setInsights] = useState(null);
-  const [showClarifications, setShowClarifications] = useState(false);
 
   const handleAnalyze = (data) => {
     setInsights(data);
-    // Check if clarifications are needed
-    if (data.clarifications_needed && data.clarifications_needed.length > 0) {
-      setShowClarifications(true);
-    }
-  };
-
-  const handleClarificationSubmit = async (classifications) => {
-    try {
-      // Send classifications to backend
-      const response = await fetch(`${API_BASE_URL}/update-classifications`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ classifications })
-      });
-
-      if (response.ok) {
-        // In a real app, you'd get updated insights back
-        setShowClarifications(false);
-        alert('Thanks! Your report has been updated with these clarifications.');
-      }
-    } catch (error) {
-      console.error('Error updating classifications:', error);
-      alert('Error updating classifications. Please try again.');
-    }
   };
 
   const handleReset = () => {
     setInsights(null);
-    setShowClarifications(false);
   };
 
   return (
-    <div style={{
-       backgroundColor: '#f5f7fa',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-    }}>
-      <div style={{
-        maxWidth: '900px', margin: '0 auto', padding: '20px'
-      }}>
-        {!insights ? (
-          <FileUpload onAnalyze={handleAnalyze} />
-        ) : (
-          <>
-            <button
-              onClick={handleReset}
-              style={{
-                backgroundColor: 'white', color: '#666', border: '1px solid #ddd',
-                padding: '8px 16px', borderRadius: '6px', cursor: 'pointer',
-                marginBottom: '20px', fontSize: '14px'
-              }}
-            >
-              ← Upload New File
-            </button>
-            <Report insights={insights} />
-          </>
-        )}
+    <Router>
+      <div className="container">
 
-        {/* Clarification Modal */}
-        {showClarifications && insights?.clarifications_needed && (
-          <ClarificationModal 
-            clarifications={insights.clarifications_needed}
-            onSubmit={handleClarificationSubmit}
-            onSkip={() => setShowClarifications(false)}
+        <Routes>
+          {/* Home route */}
+          <Route
+            path="/"
+            element={
+              !insights ? (
+                <FileUpload onAnalyze={handleAnalyze} />
+              ) : (
+                <>
+                  <button
+                    onClick={handleReset}
+                    style={{
+                      color: 'black',
+                      background: 'white',
+                      border: '1px solid #ddd',
+                      padding: '8px 16px',
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                      marginBottom: '20px'
+                    }}
+                  >
+                    ← Upload New File
+                  </button>
+                  <Report insights={insights} />
+                </>
+              )
+            }
           />
-        )}
+
+          {/* PhonePe guide route */}
+          <Route path="/phonepe-guide" element={<PhonePeGuide />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
+
+export default App;
