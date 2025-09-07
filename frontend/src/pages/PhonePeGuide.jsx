@@ -18,7 +18,6 @@ const PhonePeStatementGuide = () => {
   const steps = [
     {
       title: "Open PhonePe App",
-      description: "Launch the PhonePe app on your mobile device and navigate to the Home screen.",
       image: "/imgs/phonepay1.jpg",
       instructions: [
         "Open PhonePe app from your home screen",
@@ -28,26 +27,18 @@ const PhonePeStatementGuide = () => {
     },
     {
       title: "Navigate to History",
-      description: "Tap on the 'History' tab to view your transaction history and access statement options.",
       image: "/imgs/phonepay2.jpg",
       instructions: [
         "Click on 'History' icon at the bottom of the screen",
         "You'll see your recent transactions listed",
-        "Look for 'My Statements' button in the top-right corner",
-        "Tap on 'My Statements' to proceed"
+        "Tap on 'My Statements' to proceed in the top-right corner"
       ]
     },
     {
       title: "Select Statement Range",
-      description: "Choose the time period for which you want to download your payment statement.",
       image: "/imgs/phonepay3.jpg",
       instructions: [
-        "Select your preferred time range from the options:",
-        "• Last 30 days (selected by default)",
-        "• Last 90 days",
-        "• Last 180 days", 
-        "• Last 365 days",
-        "• Custom date range",
+        "Choose the time period for which you want to download your payment statement.",
         "Tap the 'Download' button to generate your statement"
       ]
     }
