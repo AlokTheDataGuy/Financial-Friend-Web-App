@@ -2,6 +2,8 @@
 
 A friendly financial analysis tool that turns your boring bank statements into engaging insights. Upload your statement, get personalized spending analysis with charts, highlights, and actionable recommendations.
 
+![Logo](Screenshot.png)
+
 ## Features ✨
 
 - **Smart File Upload**: Supports CSV, PDF, Excel files (.xlsx, .xls)
